@@ -1,0 +1,35 @@
+@mixin searchbar {
+    background: #fed330;
+}
+
+@mixin primary-button {
+    padding: 0.8rem 1rem;
+    border: 0.2rem solid black;
+    width: 10rem;
+    font-size: 1.7rem;
+    width: 25%;
+}
+
+@mixin services-box{
+    width: 250px;
+    background: white;
+    
+}
+
+@mixin secondary-button{
+    padding: 0.8rem 1rem;
+background: $primary-color;
+    width: 10rem;
+    font-size: 1.7rem;
+    width: 25%;
+}
+
+@mixin popular{
+    background-color: white;
+    width: 30rem;
+}
+
+@mixin commonservices{
+    
+
+}

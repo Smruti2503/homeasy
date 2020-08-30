@@ -1,0 +1,520 @@
+@import "__common.scss";
+@import "__colors.scss";
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+html{
+    font-size: 63.5%;
+}
+
+
+/*NAVBAR SECTION*/
+#navbararea {
+
+border-bottom: 0.1rem solid black;
+
+
+
+
+img{
+    width: 40px;
+    height: 40px;
+}
+img:hover{
+    cursor: pointer;
+}
+
+    .search{
+        @include searchbar;
+    }
+
+}
+
+#slider-left{
+    width: 25rem;
+    background: #fed330;
+    position: fixed;
+    left: -25rem;
+    top: 0;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    overflow-y: auto;
+    transition: 1s;
+    z-index: 99;
+    font-weight: bold;
+    
+
+
+    img{
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        width: 3rem;
+        cursor: pointer;
+    }
+
+    ol{
+        list-style: none;
+        padding: 0;
+        overflow-y: auto;
+      
+        & li{
+            font-size: 2rem;
+            padding: 0;
+            margin: 2.8rem 0;
+
+            & a{
+                text-decoration: none;
+                color: white;
+                position: relative;
+              
+            }
+            a::after{
+                content: "";
+                background-color: #d1d8e0;
+                width: 0;
+                height: 0.2rem;
+                display: inline-block;
+                position: absolute;
+                left: 0;
+                top: 100%;
+                transition: 0.7s;
+                
+            }
+            a:hover::after{
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+
+/*----HEADER SECTION---*/
+#header
+{
+    padding: 6rem 0;
+
+     & h1{
+     font-size: 6rem;
+     word-wrap: normal;
+     font-weight: 900;
+     color: $primary-color;
+     word-wrap: break-word;
+     }
+
+     & h3{
+        font-size: 4.5rem;
+        word-wrap: normal; 
+        color: #d1d8e0;
+        font-weight: 400;
+        word-wrap: break-word;
+     }
+
+     & p{
+         font-size: 2rem;
+     }
+
+     .primary-btn{
+         @include primary-button;
+         transition: 0.7s linear;
+     }
+     .primary-btn:hover{
+         background: $primary-color;
+         border: 0.2rem solid $primary-color;
+         color: white;
+         font-weight: bold;
+     }
+}
+
+
+
+/*----SERVICES SECTION----*/
+#services{
+    margin-top: 7rem;
+    background: $primary-color;
+
+    .services{
+        @include services-box;
+        transition: 0.7s ease-out;
+
+        &:hover{
+            transform: rotate(360deg);
+            border-radius: 7rem;
+            filter: drop-shadow(0.2rem 0.2rem 0.4rem black);
+        }
+    }
+
+    & h5{
+        font-size: 2rem;
+        margin: 1rem 0;
+        color: $primary-color;
+        letter-spacing: -0.1rem;
+        font-weight: 700;
+    }
+
+    & p{
+        font-size: 1.6rem;
+        font-style: italic;
+        font-weight: 500;
+    }
+    
+    & img{
+        width: 7rem;
+        background: $primary-color;
+        border-radius: 5rem;
+        padding: 2rem;
+    }
+    .services-top{
+        transform: translateY(-4rem);
+    }
+}
+
+
+
+
+
+
+
+/*----ABOUT SECTION------*/
+#about{
+    padding: 8rem;
+    background: #ecf0f1;
+
+    & h2{
+        font-size: 5rem;
+        letter-spacing: 0.2rem;
+        word-wrap: break-word;
+    }
+
+    & p{
+        font-size: 2rem;
+        margin: 5rem 0;
+        font-weight: 500;
+        line-height: 4rem;
+    }
+
+    .secondary-button{
+        @include secondary-button;
+        border: 0.2rem solid $primary-color;
+        transition: background 1s;
+    }
+    .secondary-button:hover{
+        background: transparent;
+        border: 0.2rem solid $primary-color;
+    }
+}
+
+
+
+/*---REPAIR SECTION----*/
+#repair{
+    background: url(repair-services.jpg);
+    width: 100%;
+    padding: 4rem 0;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    .about{
+        background-color: $primary-color;
+    
+    }
+
+    & h1{
+        font-size: 8.5rem;
+        letter-spacing: -0.1rem;
+    }
+    & p{
+        font-size: 4rem;
+    }
+}
+
+
+
+/*---POPULAR SECTION-----*/
+#popular{
+    padding: 6rem 0;
+    background: url(/home-repair-header.jpg);
+
+    & h1{
+        font-size: 5rem;
+        text-align: center;
+        color: $primary-color;
+        text-shadow: 0.2rem 0.2rem 0.2rem black;
+    }
+
+    & p{
+        font-size: 1.4rem;
+        text-align: center;
+        margin-bottom: 6rem;
+    }
+
+    .popular{
+        @include popular;
+        transition: transform 0.7s linear;
+
+        &:hover{
+            filter: drop-shadow(1rem 1rem 2rem black);
+            transform: scale(1.15);
+        }
+       
+
+        & h4{
+            font-size: 2.4rem;
+            margin: 1rem 0;
+            color: $primary-color;
+            font-weight: 600;
+        }
+
+        & p{
+            font-size: 1.7rem;
+            font-style: italic;
+        }
+    }
+
+
+   
+}
+
+
+
+/*--DESCRIPTION SECTION---*/
+#mainservices{
+    padding: 8rem 0;
+    background: #2d3436;
+
+    .textarea h1{
+        color: white;
+        font-size: 5rem;
+        word-wrap: break-word;;
+    }
+    .textarea p{
+        color: white;
+        font-weight: 100;
+        font-size: 2rem;
+    }
+
+   
+
+    .commonservices h4{
+       color: $primary-color;
+       font-size: 2.5rem;
+       word-wrap: break-word;
+    }
+    .commonservices p{
+        color: white;
+        font-size: 1.6rem;
+        font-style: italic;
+        word-spacing: 0.5rem;
+        font-weight: 300;
+    }
+
+    .primary-button {
+        @include primary-button 
+        border: 1px solid $primary-color;
+        color: $primary-color;
+        transition: 0.7s linear;
+
+        &:hover{
+            border: 1px solid $primary-color;
+            background: $primary-color;
+            color: white;
+        }
+    }
+}
+
+
+
+
+
+
+
+/*----ABOUT SECTION--------*/
+#about{
+    padding: 9rem 0;
+    background: linear-gradient(to right, #dfe6e9 50%, white 50% );
+
+    h1{
+        font-size: 5rem;
+        font-weight: bold;
+    }
+
+    p{
+       font-weight: lighter;
+       font-size: 1.8rem;
+       line-height: 2.8rem;
+    }
+
+    .primary-button {
+        @include primary-button ;
+        width: 50%;
+        transition: 0.7s linear;
+
+        &:hover{
+            background: $primary-color;
+            border: 0.2rem solid $primary-color;
+        }
+    }
+
+    .colour{
+        background: $primary-color;
+
+        & img{
+            transform: translate(15%,-10%);
+        }
+    }
+}
+
+
+
+
+
+
+
+/*----CONTACT SECTION-----*/
+#contact{
+    padding: 5rem 0;
+    background: #2d3436;
+
+    & small{
+        font-size: 1.4rem;
+    }
+
+    & h3{
+        font-weight: bold;
+    }
+
+    .details{
+        background: $primary-color;
+        padding: 2rem 2rem;
+        height: 30rem;
+        transform: translateX(10%);
+        filter: drop-shadow(.1rem .1rem 1rem black);
+
+      
+    }
+
+    .formarea{
+        background: white;
+        min-height: 50rem;
+
+        form{
+        
+            width: 70%;
+
+            & input{
+                width: 100%;
+                padding: 1.2rem 2rem;
+                font-size: 1.5rem;
+                margin: 1rem 0;
+                border: none;
+                outline: none;
+                border-bottom: 0.2rem solid black;
+
+               
+            }
+             input:focus{
+               box-shadow: 0.2rem 0.2rem 0.4rem black;
+            }
+
+            & textarea{
+                width: 100%;
+                padding: 1.2rem 2rem;
+                font-size: 1.5rem;
+                margin: 1rem 0;
+                height: 13rem;
+                border: none;
+                outline: none;
+                border-bottom: 0.2rem solid black;
+            }
+            textarea:focus{
+                box-shadow: 0.2rem 0.2rem 0.4rem black;   
+            }
+
+            .primary-button{
+                @include primary-button;
+                transition: 0.7s linear;
+                width:10rem;
+
+                &:hover{
+                    background: $primary-color;
+                    border: 0.2rem solid $primary-color;
+                }
+            }
+
+        }
+    }
+}
+
+
+
+
+
+
+/*------FOOTER SECTION----------*/
+
+#footer{
+    background: $primary-color;
+    padding: 2rem 0;
+
+    .social{
+
+       & img{
+           width: 2rem;
+           margin: 0 0.5rem;
+           transition: 1s ease-in-out;
+           cursor: pointer;
+       }
+
+       img:hover{
+           transform: rotate(360deg);
+       }
+    }
+
+    span{
+        color: blue;
+        letter-spacing: 0.2rem;
+        
+    }
+}
+
+
+
+@media  (max-width:768px){
+
+    html{
+        font-size: 43.75%;
+    }
+
+    #contact  .details{
+        transform: translateX(0%);
+        transform: translateY(10%);
+     
+    }
+}
+
+@media  (max-width:200px){
+    html{
+        font-size: 30%;
+    }
+
+    #repair h1{
+        font-size: 4rem;
+    }
+
+    #repair p{
+        font-size: 2.2rem;
+    }
+
+    #popular h1{
+        font-size: 3rem;
+    }
+}
